@@ -23,19 +23,19 @@ I've written a breakdown article for this project which is available on [Sitepoi
 Clone the project
 
 ```bash
-  git clone git@github.com:brandiqa/react-query-demo.git
+git clone git@github.com:sitepoint-editors/react-query-demo.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd react-query-demo
+cd react-query-demo
 ```
 
 Install dependencies
 
 ```bash
-  npm install
+npm install
 ```
 
 Setup database file
@@ -47,22 +47,22 @@ cp api/sample.db.json api/db.json
 Start the `json-server`
 
 ```bash
-  npm run json-server
+npm run json-server
 ```
 
 Launch another terminal and start the Vite server
 
 ```bash
-  npm run dev
+npm run dev
 ```
 
-Head over to your browser and open the URL `localhost:3000` to access the application
+Head over to your browser and open the URL <http://localhost:3000> to access the application.
 
 ## License
 
 [MIT License](https://choosealicense.com/licenses/mit/)
 
-Copyright (c) 2021 Michael Wanyoike
+Copyright (c) 2021 SitePoint
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
