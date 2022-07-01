@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useMutation, useQueryClient } from 'react-query'
 
-import { AppContext } from '../store/app-context'
+import { AppContext } from '../providers/AppContextProvider'
 import FlashAlert from './FlashAlert'
 import EditIcon from '../icons/edit'
 import DeleteIcon from '../icons/delete'
@@ -11,11 +11,11 @@ import DeleteModal from './DeleteModal'
 
 import './table.css'
 
-function UserTable({ users }) {
+function UserTable ({ users }) {
   // Delete Modal Show State
   const [deleteId, setDeleteId] = useState(0)
   const [showModal, setShowModal] = useState(false)
-  const [flashMessage, setFlashMessage] = useContext(AppContext)
+  const {flashMessage, setFlashMessage} = useContext(AppContext)
 
   const queryClient = useQueryClient()
 

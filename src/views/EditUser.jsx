@@ -1,14 +1,14 @@
 import React from 'react'
 import axios from 'axios'
 import { useQuery, useMutation } from 'react-query'
-import { useParams, Redirect } from 'react-router-dom'
+import { useParams, Route, Navigate, Routes } from 'react-router-dom'
 
 import UserForm from '../components/UserForm'
 
-const fetchUser = async ({ queryKey }) => {
+const fetchUser = async ({ queryKey, signal }) => {
   const [_key, { id }] = queryKey
-  const response = await fetch(`http://localhost:3004/users/${id}`)
-
+  const response = await fetch(`http://localhost:3004/users/${id}`, { signal })
+console.log('signal >>', signal)
   if (!response.ok) {
     throw new Error(response.statusText)
   }
@@ -34,7 +34,9 @@ function EditUser() {
   }
 
   if (isSuccess) {
-    return <Redirect to="/" />
+    // return <Redirect to="/" />
+    // return <Routes><Route path="/" render={<Navigate to="/" />} /></Routes>
+    return <Navigate to="/" />
   }
 
   return (
